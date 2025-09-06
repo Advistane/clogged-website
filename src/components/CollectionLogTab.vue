@@ -1,9 +1,9 @@
 <template>
     <Tabs v-if="category" v-model="activeSubcategory" default-value="Abyssal Sire" class="w-full" orientation="vertical">
-        <div class="lg:hidden mb-4 bg-[#3a2c1a] border-[3px] border-[#7a5d3b] rounded-md">
+        <div class="lg:hidden mb-4 bg-rs-brown-dark border-[var(--rs-border-width)] rounded-md">
             <DropdownMenu>
                 <DropdownMenuTrigger
-                    class="w-full text-[#cf9d63] dark:text-[#cf9d63] hover:bg-[#7a5d3b]/30 dark:hover:bg-[#8b6d4b]/30 hover:text-white transition-colors border-[#7a5d3b]">
+                    class="w-full text-rs-text-wheat hover:bg-rs-brown-light/30 hover:text-white transition-colors border-rs-brown-light">
                     <div class="flex items-center justify-center">
                         {{ activeSubcategory }}
                         <ChevronDown class="w-4 h-4 ml-2" />
@@ -23,10 +23,13 @@
 
         <div class="grid lg:grid-cols-[auto_1fr] gap-4">
             <div class="hidden lg:block">
-                <ScrollArea class="h-[450px] rounded-md border-[3px] border-[#7a5d3b]">
+                <ScrollArea class="h-[450px] rounded-md border-[var(--rs-border-width)]">
                     <TabsList class="flex-col h-fit bg-transparent">
-                        <TabsTrigger v-for="subcategory in category.subcategories" :value="subcategory.name"
-                            class="w-[95%] text-[#cf9d63] dark:text-[#cf9d63] hover:bg-[#7a5d3b]/30 dark:hover:bg-[#8b6d4b]/30 hover:text-white transition-colors data-[state=active]:bg-[#7a5d3b] dark:data-[state=active]:bg-[#8b6d4b] data-[state=active]:text-white data-[state=active]:font-bold data-[state=active]:border-2 data-[state=active]:border-[#f5deb3] dark:data-[state=active]:border-[#d4b483] data-[state=active]:rounded-md">
+                        <TabsTrigger
+                          v-for="subcategory in category.subcategories"
+                          :value="subcategory.name"
+                          class="w-[95%] text-rs-text-wheat hover:bg-rs-brown-light/30 hover:text-white transition-colors data-[state=active]:bg-rs-brown-light data-[state=active]:text-white data-[state=active]:font-bold data-[state=active]:border-2 data-[state=active]:border-rs-text-orange data-[state=active]:rounded-md data-[state=active]:ring-2 data-[state=active]:ring-rs-text-orange/40"
+                        >
                             {{ subcategory.name }} ({{ getObtained(subcategory.items) }} / {{
                             subcategory.items.length}})
                         </TabsTrigger>

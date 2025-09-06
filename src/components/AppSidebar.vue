@@ -80,9 +80,11 @@ import { useColorMode } from "@vueuse/core";
 import { useClogStore } from "@/stores/clogStore.ts";
 import Separator from "./ui/separator/Separator.vue";
 import router from "@/router";
+import { useSidebar } from "@/components/ui/sidebar";
 
 const mode = useColorMode();
 const clogStore = useClogStore();
+const { isMobile, setOpenMobile } = useSidebar();
 
 const items = [
 	{
@@ -124,8 +126,9 @@ const items = [
 ];
 
 async function searchUsername() {
-	//await clogStore.searchUsername(search.value);
-	router.push(`/clog/${clogStore.username}`);
+    //await clogStore.searchUsername(search.value);
+    router.push(`/clog/${clogStore.username}`);
+    if (isMobile.value) setOpenMobile(false);
 }
 
 function toggleTheme() {

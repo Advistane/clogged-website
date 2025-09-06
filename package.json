@@ -6,7 +6,14 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "docker:build": "docker build -t clogged-website .",
+    "docker:run": "docker run -p 80:80 clogged-website",
+    "docker:compose": "docker-compose up -d",
+    "docker:compose:build": "docker-compose up --build -d",
+    "docker:compose:down": "docker-compose down",
+    "docker:compose:logs": "docker-compose logs -f",
+    "docker:deploy": "./deploy.sh"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.6",

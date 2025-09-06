@@ -57,6 +57,13 @@
   --rs-text-wheat: #f5deb3;
   --rs-text-orange: #ff981f;
   --rs-border-width: 3px;
+
+  /* Tailwind v4 color tokens for RS theme */
+  --color-rs-brown-dark: var(--rs-brown-dark);
+  --color-rs-brown-darker: var(--rs-brown-darker);
+  --color-rs-brown-light: var(--rs-brown-light);
+  --color-rs-text-wheat: var(--rs-text-wheat);
+  --color-rs-text-orange: var(--rs-text-orange);
 }
 
 :root {
@@ -154,5 +161,5 @@
 }
 
 body {
-  font-family: 'Consolas';
+    font-family: 'Consolas', serif;
 }

@@ -1,28 +1,32 @@
 ﻿<template>
-	<Card class="bg-[#3a2c1a] border-[3px] border-[#7a5d3b] text-[#f5deb3] shadow-lg w-full font-mono">
-		<Tabs v-if="clogStore.dataLoaded" v-model="tab" class="flex w-full px-4">
-			<TabsList class="w-full bg-[#2a1e13]">
-				<TabsTrigger v-for="category in categories" :value="category.category_name" class="hover:bg-[#3a2c1a]"> 
-					{{ category.category_name }}
-				</TabsTrigger>
-			</TabsList>
+    <Card class="bg-rs-brown-dark border-[var(--rs-border-width)] border-rs-brown-light text-rs-text-wheat shadow-lg w-full font-mono">
+        <Tabs v-if="clogStore.dataLoaded" v-model="tab" class="flex w-full px-4">
+            <TabsList class="w-full bg-rs-brown-darker">
+                <TabsTrigger
+                  v-for="category in categories"
+                  :value="category.category_name"
+                  class="hover:bg-rs-brown-dark text-rs-text-wheat/90 data-[state=active]:bg-rs-brown-light data-[state=active]:text-white data-[state=active]:font-bold data-[state=active]:border-2 data-[state=active]:border-rs-text-wheat data-[state=active]:rounded-md data-[state=active]:ring-2 data-[state=active]:ring-rs-text-orange/40"
+                > 
+                    {{ category.category_name }}
+                </TabsTrigger>
+            </TabsList>
 
 			<TabsContent v-for="category in categories" :value="category.category_name">
 				<CollectionLogTab :category="category" :defaultSubcategory="category.subcategories[0]?.name"
 					:name="category.category_name" />
 			</TabsContent>
 		</Tabs>
-		<div v-else>
-			<div class="flex justify-center items-center h-full">
-				<div class="text-center p-8">
-					<div class="text-6xl mb-4">🔍</div>
-					<h2 class="text-2xl font-bold mb-2">Player Not Found</h2>
-					<p class="text-[#f5deb3]/80">The player you're looking for doesn't exist or hasn't been tracked yet.</p>
-					<p class="text-[#f5deb3]/80">If this is your username, ensure "Make profile visible" is enabled in the plugin settings.</p>
-				</div>
-			</div>
-		</div>
-	</Card>
+        <div v-else>
+            <div class="flex justify-center items-center h-full">
+                <div class="text-center p-8">
+                    <div class="text-6xl mb-4">🔍</div>
+                    <h2 class="text-2xl font-bold mb-2">Player Not Found</h2>
+                    <p class="text-rs-text-wheat/80">The player you're looking for doesn't exist or hasn't been tracked yet.</p>
+                    <p class="text-rs-text-wheat/80">If this is your username, ensure "Make profile visible" is enabled in the plugin settings.</p>
+                </div>
+            </div>
+        </div>
+    </Card>
 </template>
 
 <script setup lang="ts">

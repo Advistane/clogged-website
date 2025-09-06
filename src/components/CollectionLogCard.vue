@@ -1,9 +1,9 @@
 ﻿<template>
-	<Card class="bg-[#3a2c1a] border-[3px] border-[#7a5d3b] text-[#f5deb3] shadow-lg h-fit font-mono">
-		<CardHeader class="flex items-center justify-between px-4 py-2 bg-[#2a1e13] border-b border-[#7a5d3b]">
-			<h2 class="text-lg text-[#ff981f] font-bold">
-				{{ subcategory.name }}
-			</h2>
+    <Card class="bg-rs-brown-dark border-[var(--rs-border-width)] text-rs-text-wheat shadow-lg h-fit font-mono">
+        <CardHeader class="flex items-center justify-between px-4 py-2 bg-rs-brown-darker border-b border-rs-brown-light">
+            <h2 class="text-lg text-rs-text-orange font-bold">
+                {{ subcategory.name }}
+            </h2>
 
 			<div class="bg-[var(--rs-brown-light)]/50 px-2 py-1 text-xs rounded text-white">
 				<p v-if="subcategory.kc > 0">
@@ -19,7 +19,7 @@
 				</p>
 
 			</div>
-		</CardHeader>
+        </CardHeader>
 
 		<CardContent class="p-4 space-y-2">
 			<div class="flex flex-wrap gap-1 overflow-y-scroll ">

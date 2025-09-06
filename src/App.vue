@@ -1,22 +1,30 @@
 <template>
-	<SidebarProvider>
-		<AppSidebar />
-		<main class="w-full p-4">
-			<div class="video-background">
-				<video autoplay muted loop playsinline>
-					<source src="/bg.mp4" type="video/mp4">
-					Your browser does not support the video tag.
-				</video>
-				<div class="video-overlay"></div>
-			</div>
-			<RouterView />
-		</main>
-	</SidebarProvider>
+    <SidebarProvider>
+        <AppSidebar />
+        <main class="w-full px-4 md:pt-4 pt-14">
+            <!-- Mobile sidebar trigger -->
+            <div class="md:hidden fixed top-3 left-3 z-10">
+                <SidebarTrigger
+                  class="h-8 w-8 rounded-md shadow-md text-rs-brown-darker bg-rs-text-orange hover:bg-rs-text-orange/90 active:bg-rs-text-orange/80 ring-1 ring-white/60 dark:ring-black/40 border-0"
+                />
+            </div>
+            <div class="video-background">
+                <video autoplay muted loop playsinline>
+                    <source src="/bg.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-overlay"></div>
+            </div>
+            <RouterView />
+            <MobileSidebarAutoClose />
+        </main>
+    </SidebarProvider>
 </template>
 
 <script setup lang="ts">
-import { SidebarProvider } from "@/components/ui/sidebar";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import AppSidebar from "@/components/AppSidebar.vue";
+import MobileSidebarAutoClose from '@/components/MobileSidebarAutoClose.vue';
 </script>
 
 <style scoped>

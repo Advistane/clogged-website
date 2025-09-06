@@ -1,6 +1,6 @@
 <template>
     <div class="flex space-y-4 w-full justify-center items-center">
-        <form @submit="onSubmit" class="space-y-8 w-[500px] justify-center items-center border-[3px] border-[#7a5d3b] p-4">
+        <form @submit="onSubmit" class="space-y-8 w-[500px] justify-center items-center border-[var(--rs-border-width)] p-4">
             <FormField v-slot="{ componentField }" name="groupName">
                 <FormItem>
                     <FormLabel>
@@ -24,9 +24,9 @@
                         Join Settings <span class="text-xs text-gray-500">(This can be changed later)</span>
                         <HoverCard>
                             <HoverCardTrigger>
-                                <span class=" bg-[#7a5d3b] text-[#f5deb3] rounded-full w-40 h-40 cursor-help transition-colors"><HelpCircle class="w-4 h-4" /></span>
+                                <span class=" bg-rs-brown-light text-rs-text-wheat rounded-full w-40 h-40 cursor-help transition-colors"><HelpCircle class="w-4 h-4" /></span>
                             </HoverCardTrigger>
-                            <HoverCardContent className="w-80 bg-[#3a2c1a] border-[#7a5d3b] text-[#f5deb3]">
+                            <HoverCardContent className="w-80 bg-rs-brown-dark border-rs-brown-light text-rs-text-wheat">
                                 <div class="space-y-2">
                                     <h4 class="text-sm font-semibold">Join Settings Information</h4>
                                     <p class="text-sm">
