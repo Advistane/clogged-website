@@ -9,7 +9,7 @@
                 <TabsTrigger
                   v-for="category in categories"
                   :value="category.category_name"
-                  class="hover:bg-rs-brown-dark text-rs-text-wheat/90 data-[state=active]:bg-rs-brown-light data-[state=active]:text-white data-[state=active]:font-bold data-[state=active]:border-2 data-[state=active]:border-rs-text-wheat data-[state=active]:rounded-md data-[state=active]:ring-2 data-[state=active]:ring-rs-text-orange/40"
+                  class="hover:bg-rs-brown-dark text-rs-text-wheat/90 data-[state=active]:bg-rs-brown-light data-[state=active]:text-rs-text-wheat dark:data-[state=active]:text-white data-[state=active]:font-bold data-[state=active]:border-2 data-[state=active]:border-rs-text-wheat data-[state=active]:rounded-md data-[state=active]:ring-2 data-[state=active]:ring-rs-text-orange/40"
                 > 
                     {{ category.category_name }}
                 </TabsTrigger>
@@ -26,7 +26,7 @@
                     <div class="text-6xl mb-4">🔍</div>
                     <h2 class="text-2xl font-bold mb-2">Player Not Found</h2>
                     <p class="text-rs-text-wheat/80">The player you're looking for doesn't exist or hasn't been tracked yet.</p>
-                    <p class="text-rs-text-wheat/80">If this is your username, ensure "Make profile visible" is enabled in the plugin settings.</p>
+                    <p class="text-rs-text-wheat/80">If this is your username, ensure "Make clog public" is enabled in the plugin settings.</p>
                 </div>
             </div>
         </div>

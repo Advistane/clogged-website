@@ -5,7 +5,7 @@
             class="relative bg-rs-brown-darker border border-rs-brown-light flex items-center justify-center p-2 w-16"
             >
 				<!-- Quantity Box -->
-				<div class="absolute top-0 left-0 text-white text-xs font-bold px-1 rounded-bl">
+				<div class="absolute top-0 left-0 text-rs-text-wheat dark:text-white text-xs font-bold px-1 rounded-bl">
 					{{ item.quantity }}x
 				</div>
 				<img :src="getImageUrl()" :alt="item.item_name" class="w-8 h-8" :class="!obtained ? 'opacity-25' : null" loading="lazy"/>

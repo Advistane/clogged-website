@@ -3,7 +3,7 @@
         <div class="lg:hidden mb-4 bg-rs-brown-dark border-[var(--rs-border-width)] rounded-md">
             <DropdownMenu>
                 <DropdownMenuTrigger
-                    class="w-full text-rs-text-wheat hover:bg-rs-brown-light/30 hover:text-white transition-colors border-rs-brown-light">
+                    class="w-full text-rs-text-wheat hover:bg-rs-brown-light/30 hover:text-rs-text-wheat dark:hover:text-white transition-colors border-rs-brown-light">
                     <div class="flex items-center justify-center">
                         {{ activeSubcategory }}
                         <ChevronDown class="w-4 h-4 ml-2" />
@@ -28,7 +28,7 @@
                         <TabsTrigger
                           v-for="subcategory in category.subcategories"
                           :value="subcategory.name"
-                          class="w-[95%] text-rs-text-wheat hover:bg-rs-brown-light/30 hover:text-white transition-colors data-[state=active]:bg-rs-brown-light data-[state=active]:text-white data-[state=active]:font-bold data-[state=active]:border-2 data-[state=active]:border-rs-text-orange data-[state=active]:rounded-md data-[state=active]:ring-2 data-[state=active]:ring-rs-text-orange/40"
+                          class="w-[95%] text-rs-text-wheat hover:bg-rs-brown-light/30 hover:text-rs-text-wheat dark:hover:text-white transition-colors data-[state=active]:bg-rs-brown-light data-[state=active]:text-rs-text-wheat dark:data-[state=active]:text-white data-[state=active]:font-bold data-[state=active]:border-2 data-[state=active]:border-rs-text-orange data-[state=active]:rounded-md data-[state=active]:ring-2 data-[state=active]:ring-rs-text-orange/40"
                         >
                             {{ subcategory.name }} ({{ getObtained(subcategory.items) }} / {{
                             subcategory.items.length}})
