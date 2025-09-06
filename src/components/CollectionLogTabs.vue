@@ -1,6 +1,10 @@
 ﻿<template>
-    <Card class="bg-rs-brown-dark border-[var(--rs-border-width)] border-rs-brown-light text-rs-text-wheat shadow-lg w-full font-mono">
-        <Tabs v-if="clogStore.dataLoaded" v-model="tab" class="flex w-full px-4">
+    <Card class="bg-rs-brown-dark border-[var(--rs-border-width)] text-rs-text-wheat shadow-lg w-full font-mono">
+	    <h1 v-if="clogStore.dataLoaded" class="text-3xl font-bold text-center text-rs-text-wheat mb-6">
+		    {{ username }}
+	    </h1>
+
+	    <Tabs v-if="clogStore.dataLoaded" v-model="tab" class="flex w-full px-4">
             <TabsList class="w-full bg-rs-brown-darker">
                 <TabsTrigger
                   v-for="category in categories"
@@ -42,17 +46,26 @@ const clogStore = useClogStore();
 
 const tab = ref('bosses');
 
+function capitalizeWords(str: string): string {
+  return str.replace(/\b\w/g, char => char.toUpperCase());
+}
+
+const username = computed(() => {
+  const raw = route.params.username as string || '';
+  return capitalizeWords(raw);
+});
+
 // Load data when component is mounted
 onMounted(async () => {
 	const username = route.params.username as string;
 	if (username) {
-		searchUsername(username as string);
+		await searchUsername(username);
 	}
 });
 
 watch(() => route.params.username, async username => {
 	if (username) {
-		searchUsername(username as string);
+		await searchUsername(username as string);
 	}
 });
 
